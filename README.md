@@ -8,3 +8,13 @@ The short description of their API is [here](http://www.wikispeedia.org/faq.txt)
 
 This is an example API call:
 http://www.wikispeedia.org/a/marks_bb2.php?name=all&nelat=35.198676&swlat=35.194676&nelng=-89.56558&swlng=-89.56958
+
+
+Install using install_github within Hadley's [devtools](https://github.com/hadley/devtools) package.
+
+```R
+install.packages("devtools")
+require(devtools)
+install_github("rwikispeedia", "ropensci")
+require(rwikispeedia)
+```
