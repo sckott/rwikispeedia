@@ -15,6 +15,6 @@ Install using install_github within Hadley's [devtools](https://github.com/hadle
 ```R
 install.packages("devtools")
 require(devtools)
-install_github("rwikispeedia", "ropensci")
+install_github("rwikispeedia", "SChamberlain")
 require(rwikispeedia)
 ```
