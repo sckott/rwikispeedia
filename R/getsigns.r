@@ -1,9 +1,9 @@
 #' Search Wikispeedia for speed limit signs. 
 #' @import RCurl XML plyr
-#' @param nelat Northeastern bounding point.
-#' @param swlat Northeastern bounding point.
-#' @param nelng Northeastern bounding point.
-#' @param swlng Northeastern bounding point.
+#' @param nelat Northeastern latitude bounding point.
+#' @param swlat Southwestern latitude bounding point.
+#' @param nelng Northeastern longitude bounding point.
+#' @param swlng Southwestern longitude bounding point.
 #' @return Data frame of speed limit signs with label, lat, long, mph, kph, 
 #'    cog, and alt_meters.
 #' @export

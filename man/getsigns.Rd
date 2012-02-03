@@ -7,13 +7,13 @@
     ..., curl = getCurlHandle())
 }
 \arguments{
-  \item{nelat}{Northeastern bounding point.}
+  \item{nelat}{Northeastern latitude bounding point.}
 
-  \item{swlat}{Northeastern bounding point.}
+  \item{swlat}{Southwestern latitude bounding point.}
 
-  \item{nelng}{Northeastern bounding point.}
+  \item{nelng}{Northeastern longitude bounding point.}
 
-  \item{swlng}{Northeastern bounding point.}
+  \item{swlng}{Southwestern longitude bounding point.}
 }
 \value{
   Data frame of speed limit signs with label, lat, long,
