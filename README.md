@@ -18,3 +18,5 @@ require(devtools)
 install_github("rwikispeedia", "SChamberlain")
 require(rwikispeedia)
 ```
+
+You will also need to install the RCurl, XML, and plyr packages to use rwikispeedia. 
