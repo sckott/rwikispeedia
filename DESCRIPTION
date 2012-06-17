@@ -1,8 +1,8 @@
 Package: rwikispeedia
 Description: Interface to the Wikispeedia API.
 Title: Interface to the Wikispeedia API.
-Version: 0.1
-Date: 2-3-12
+Version: 0.1.5
+Date: 06-17-12
 License: BSD
 Author: Scott Chamberlain
 Maintainer: Scott Chamberlain <myrmecocystus@gmail.com>
@@ -12,3 +12,5 @@ Imports:
     plyr
 Collate:
     'getsigns.r'
+    'delsigns.r'
+    'postsigns.r'

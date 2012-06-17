@@ -1,4 +1,6 @@
+export(delsigns)
 export(getsigns)
+export(postsigns)
 import(RCurl)
 import(XML)
 import(plyr)
