@@ -1,6 +1,9 @@
 #' Post speed limit signs to Wikispeedia.
 #' 
 #' @import RCurl plyr
+#' @param input Input R object to the function to post signs: list or data.frame. 
+#' @param type Type of input: a single point (args), a list containing more than
+#'    one point (list), or a data.frame (df).
 #' @param mlat Latitude of the point in degree decimal.
 #' @param mlon Longitude of the point in degree decimal.
 #' @param malt_meters Altidue of the point in meters.
@@ -20,13 +23,13 @@
 #' sign1 <- list(mlat=59.87, mlon=-115.05, malt_meters=20, mmph=60, mtag="testlist1", mcog=0, memail="johndoe@@gmail.com")
 #' sign2 <- list(mlat=59.87, mlon=-125.05, malt_meters=20, mmph=60, mtag="testlist2", mcog=0, memail="johndoe@@gmail.com")
 #' mysigns <- list(sign1, sign2)
-#' postsigns(filelist = mysigns, type = 'list')
+#' postsigns(input = mysigns, type = 'list')
 #' 
 #' # Reading in data from spreadsheet (create your own following format of one below)
 #' dat <- read.csv("~/github/SChamberlain/rwikispeedia/data/signs.csv")
-#' postsigns(filelist = dat, type = 'df')
+#' postsigns(input = dat, type = 'df')
 #' }
-postsigns <- function(filelist = NULL, type = list('args','list','df'), 
+postsigns <- function(input = NULL, type = list('args','list','df'), 
   mlat = NA, mlon = NA, malt_meters = NA, mmph = NA, mkph = NA, mtag = NA, 
   mcog = NA, mhours = NA, memail = NA, 
   url = 'http://www.wikispeedia.org/a/process_submit_bb.php', 
@@ -55,11 +58,11 @@ postsigns <- function(filelist = NULL, type = list('args','list','df'),
     postForm(uri=url, .params = args, style = style, curl = curl)
   } else
     if(type == 'list'){
-      l_ply( filelist, function(x) 
+      l_ply( input, function(x) 
         postForm(uri=url, .params = x, style = style, curl = curl) )
     } else
       if(type == 'df'){
-        dl <- apply(filelist, 1, as.list)  
+        dl <- apply(input, 1, as.list)  
         l_ply( dl, .print=T, function(x){ 
           postForm(uri=url, .params = x, style = style, curl = curl) 
             } 
