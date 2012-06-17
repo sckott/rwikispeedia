@@ -58,7 +58,7 @@ postsigns <- function(input = NULL, type = list('args','list','df'),
     postForm(uri=url, .params = args, style = style, curl = curl)
   } else
     if(type == 'list'){
-      l_ply( input, function(x) 
+      l_ply( input, .print=T, function(x) 
         postForm(uri=url, .params = x, style = style, curl = curl) )
     } else
       if(type == 'df'){
