@@ -9,13 +9,13 @@
 #'    cog, and alt_meters.
 #' @export
 #' @examples \dontrun{
-#' delsigns(63.27, 59.03, -121.29, -140.1)
+#' delsigns(63.27, 59.03, -113, -121.29)
 #' }
 delsigns <- function(nelat = NA, swlat = NA, nelng = NA, swlng = NA,   
-  url = 'http://www.wikispeedia.org/a/delete_bb2.php',
+  url = 'http://www.wikispeedia.org/a/delete_bb3.php',
   style = "POST", curl = getCurlHandle())
 {
-  args <- list(name = "all")
+  args <- list()
   if(!is.na(nelat))
     args$nelat <- nelat
   if(!is.na(swlat))
