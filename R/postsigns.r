@@ -13,6 +13,8 @@
 #' @param mcog Course over ground in degrees.
 #' @param mhours Optional field, not used presently.
 #' @param memail Email address of submitter.
+#' @param curl curl handle
+#' @param style "GET" or "POST"
 #' @return Returns success message if post succesful.
 #' @export
 #' @examples \dontrun{
@@ -32,9 +34,9 @@
 postsigns <- function(input = NULL, type = list('args','list','df'), 
   mlat = NA, mlon = NA, malt_meters = NA, mmph = NA, mkph = NA, mtag = NA, 
   mcog = NA, mhours = NA, memail = NA, 
-  url = 'http://www.wikispeedia.org/a/process_submit_bb.php', 
   style = "POST", curl = getCurlHandle())
 {
+  url = 'http://www.wikispeedia.org/a/process_submit_bb.php'
   if(type == 'args'){
     args <- list()
     if(!is.na(mlat))

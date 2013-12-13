@@ -5,16 +5,18 @@
 #' @param swlat Southwestern latitude bounding point.
 #' @param nelng Northeastern longitude bounding point.
 #' @param swlng Southwestern longitude bounding point.
+#' @param curl curl handle
+#' @param style "GET" or "POST"
 #' @return Data frame of speed limit signs with label, lat, long, mph, kph, 
 #'    cog, and alt_meters.
 #' @export
 #' @examples \dontrun{
 #' delsigns(63.27, 59.03, -113, -121.29)
 #' }
-delsigns <- function(nelat = NA, swlat = NA, nelng = NA, swlng = NA,   
-  url = 'http://www.wikispeedia.org/a/delete_bb3.php',
+delsigns <- function(nelat = NA, swlat = NA, nelng = NA, swlng = NA,
   style = "POST", curl = getCurlHandle())
 {
+  url = 'http://www.wikispeedia.org/a/delete_bb3.php'
   args <- list()
   if(!is.na(nelat))
     args$nelat <- nelat

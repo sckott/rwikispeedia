@@ -2,12 +2,10 @@
 \alias{postsigns}
 \title{Post speed limit signs to Wikispeedia.}
 \usage{
-  postsigns(input = NULL,
-    type = list("args", "list", "df"), mlat = NA,
-    mlon = NA, malt_meters = NA, mmph = NA, mkph = NA,
-    mtag = NA, mcog = NA, mhours = NA, memail = NA,
-    url = "http://www.wikispeedia.org/a/process_submit_bb.php",
-    style = "POST", curl = getCurlHandle())
+postsigns(input = NULL, type = list("args", "list", "df"), mlat = NA,
+  mlon = NA, malt_meters = NA, mmph = NA, mkph = NA, mtag = NA,
+  mcog = NA, mhours = NA, memail = NA, style = "POST",
+  curl = getCurlHandle())
 }
 \arguments{
   \item{input}{Input R object to the function to post
@@ -34,12 +32,16 @@
   \item{mhours}{Optional field, not used presently.}
 
   \item{memail}{Email address of submitter.}
+
+  \item{curl}{curl handle}
+
+  \item{style}{"GET" or "POST"}
 }
 \value{
-  Returns success message if post succesful.
+Returns success message if post succesful.
 }
 \description{
-  Post speed limit signs to Wikispeedia.
+Post speed limit signs to Wikispeedia.
 }
 \examples{
 \dontrun{
